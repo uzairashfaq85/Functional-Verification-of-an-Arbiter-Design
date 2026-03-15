@@ -1,0 +1,26 @@
+# Simulation build/output artifacts
+**/work/
+**/vsim.wlf
+**/*.cr.mti
+**/*.mpf
+**/tcl_stacktrace.txt
+
+# Tool optimization/temp folders
+**/_opt*/
+**/_temp*/
+**/@_opt*/
+
+# Backup and transient files
+**/*.bak
+**/backup code.txt
+**/Display.txt
+
+# Local fuzzer I/O files
+**/sequences.txt
+**/results.txt
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
