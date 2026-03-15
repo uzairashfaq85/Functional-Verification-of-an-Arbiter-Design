@@ -1,0 +1,39 @@
+-- ============================================================
+-- File       : arb_tb.psl
+-- Created    : Nov 2025
+-- Project    : Functional Verification of an Arbiter Design
+-- Description: PSL assumptions/assertions for arbtb3-based run.
+-- ============================================================
+
+vunit check_arb (arbtb3(bhv)) {
+
+  default clock is rising_edge(clk);
+
+  ----------------------------------------------------------------
+  -- INPUT CONSTRAINTS
+  ----------------------------------------------------------------
+  property constraint0 is always (cmd -> next not cmd);
+  property constraint1 is always (cmd -> (req /= "000"));
+  property constraint2 is always (cmd -> next req = req);
+
+  assert constraint0;
+  assert constraint1;
+  assert constraint2;
+
+  ----------------------------------------------------------------
+  -- OUTPUT ASSERTIONS
+  ----------------------------------------------------------------
+  property assertion0 is always
+    (cmd -> next[2] (gnt = "001" or gnt = "010" or gnt = "100"));
+
+  property assertion1 is always
+    (cmd -> next[2] (gnt /= "000"));
+
+  property assertion2 is always
+    (cmd -> next[2] ((gnt and prev(req,2)) /= "000"));
+
+  assert assertion0;
+  assert assertion1;
+  assert assertion2;
+}
+
