@@ -1,14 +1,6 @@
 # Functional Verification of an Arbiter Design
 
-Portfolio-ready VHDL verification project for a 3-requester arbiter, including RTL, protocol/property checkers, directed/self-running testbenches, PSL properties, and legacy-compatible structural wrappers.
-
----
-
-## Banner
-
-![Arbiter Verification Banner](assets/arbiter-banner.png)
-
-> Replace the banner above with your best waveform/simulation screenshot for portfolio presentation.
+VHDL verification project for a 3-requester arbiter, including RTL, protocol/property checkers, directed/self-running testbenches, PSL properties, and legacy-compatible structural wrappers.
 
 ---
 
